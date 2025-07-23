@@ -1,12 +1,12 @@
-from . import menu
+from . import menu, time_setlocal
 import sqlite3, time
 def append_task():
     add_task = input("Введите новую задачу ✍️: ")
     if add_task.strip():
         con = sqlite3.connect("TodoList.db")
         c = con.cursor()
-        time_str = time_str = time.strftime("%Y-%m-%d %H:%M:%S")
-        c.execute("INSERT INTO task (description, status, time) VALUES (?,?,?)", (add_task, "active", time_str))
+        now = time.localtime()
+        c.execute("INSERT INTO task (description, status, time) VALUES (?,?,?)", (add_task, "active", time_setlocal.format_time(now)))
         con.commit()
         con.close()
         print("Задача успешно добавлена! 🎉")
@@ -35,8 +35,8 @@ def mark_completed():
             else:
                 complet_id = task[complet - 1][0]
                 complet_text = task[complet -1][1]
-                time_str = time.strftime("%Y-%m-%d %H:%M:%S")
-                c.execute("UPDATE task SET status = ?, time = ? WHERE id = ?", ("completed", time_str, complet_id))
+                now = time.localtime()
+                c.execute("UPDATE task SET status = ?, time = ? WHERE id = ?", ("completed", time_setlocal.format_time(now), complet_id))
                 con.commit()
                 print(f"Задача '{complet_text}' успешно отмечена как выполненная! 🎉")
                 break
