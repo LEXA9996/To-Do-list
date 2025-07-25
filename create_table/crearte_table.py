@@ -13,6 +13,17 @@ def table():
         id INTEGER PRIMARY KEY AUTOINCREMENT,     
         description TEXT NOT NULL,
         status TEXT NOT NULL,
-        time TEXT)""")
+        time TEXT,
+        time_end INTEGER NULL,
+        time_end_str TEXT)""")
+        c.execute("""
+        CREATE TABLE history(
+        id INTEGER PRIMARY KEY AUTOINCREMENT,     
+        description TEXT NOT NULL,
+        status TEXT NOT NULL,
+        time TEXT,
+        time_end INTEGER NULL,
+        time_end_str TEXT)
+        """)
         con.commit()
         con.close()

@@ -1,5 +1,7 @@
-import sqlite3,time, locale 
-from . import menu, time_setlocal
+import sqlite3,time, locale
+
+from time_page import time_setlocal, temp_task
+from . import menu
 
 locale.setlocale(locale.LC_TIME, 'ru_RU.UTF-8')
 def edit():
