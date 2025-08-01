@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>498</width>
+    <height>712</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>498</width>
+    <height>712</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>498</width>
+    <height>712</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget {
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+        stop:0 #b5e1c3,
+        stop:1 #7fb5b5);
+}</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QLabel" name="hello">
+    <property name="geometry">
+     <rect>
+      <x>110</x>
+      <y>10</y>
+      <width>291</width>
+      <height>151</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    background: transparent;
+}</string>
+    </property>
+    <property name="text">
+     <string>Добро пожаловать
+в ToDo List!
+
+Что вы хотите сделать?
+</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignmentFlag::AlignCenter</set>
+    </property>
+    <property name="wordWrap">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="add_task">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>210</y>
+      <width>171</width>
+      <height>111</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    background-color: #3B82F6;
+    border-radius: 15px;
+    color: white;
+    font-size: 13px;
+    font-weight: bold;
+    padding: 15px;
+}
+    QPushButton:hover {
+        background-color: #2563EB;
+    }
+    QPushButton:pressed {
+        background-color: #1D4ED8;
+    }</string>
+    </property>
+    <property name="text">
+     <string>Добавить задачу</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="read_active_task">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>210</y>
+      <width>171</width>
+      <height>111</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>0</width>
+      <height>0</height>
+     </size>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="tabletTracking">
+     <bool>true</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    background-color: #3B82F6;
+    border-radius: 15px;
+    color: white;
+    font-size: 13px;
+    font-weight: bold;
+    padding: 15px;
+}
+    QPushButton:hover {
+        background-color: #2563EB;
+    }
+    QPushButton:pressed {
+        background-color: #1D4ED8;
+    }</string>
+    </property>
+    <property name="text">
+     <string>Посмотреть текущие
+задачи</string>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>:/add_task/icon/list_active.svg</normaloff>:/add_task/icon/list_active.svg</iconset>
+    </property>
+    <property name="autoDefault">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="edit_task">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>330</y>
+      <width>171</width>
+      <height>111</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    background-color: #3B82F6;
+    border-radius: 15px;
+    color: white;
+    font-size: 13px;
+    font-weight: bold;
+    padding: 15px;
+}
+    QPushButton:hover {
+        background-color: #2563EB;
+    }
+    QPushButton:pressed {
+        background-color: #1D4ED8;
+    }</string>
+    </property>
+    <property name="text">
+     <string>Изменить задачу</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="completed_task">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>330</y>
+      <width>171</width>
+      <height>111</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    background-color: #3B82F6;
+    border-radius: 15px;
+    color: white;
+    font-size: 13px;
+    font-weight: bold;
+    padding: 15px;
+}
+    QPushButton:hover {
+        background-color: #2563EB;
+    }
+    QPushButton:pressed {
+        background-color: #1D4ED8;
+    }</string>
+    </property>
+    <property name="text">
+     <string>Отметить как
+выполненную</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="active_task_history">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>570</y>
+      <width>171</width>
+      <height>111</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    background-color: #3B82F6;
+    border-radius: 15px;
+    color: white;
+    font-size: 13px;
+    font-weight: bold;
+    padding: 15px;
+}
+    QPushButton:hover {
+        background-color: #2563EB;
+    }
+    QPushButton:pressed {
+        background-color: #1D4ED8;
+    }</string>
+    </property>
+    <property name="text">
+     <string>Cохранить
+за 7 дней</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="delete_task_2">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>570</y>
+      <width>171</width>
+      <height>111</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    background-color: #505c52;
+    border-radius: 15px;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 15px;
+}
+QPushButton:hover {
+    background-color: #3e493f;
+}
+QPushButton:pressed {
+    background-color: #2e382f;
+}
+</string>
+    </property>
+    <property name="text">
+     <string>Удалить задачу</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="delete_task">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>570</y>
+      <width>171</width>
+      <height>111</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    background-color: #3B82F6;
+    border-radius: 15px;
+    color: white;
+    font-size: 13px;
+    font-weight: bold;
+    padding: 15px;
+}
+    QPushButton:hover {
+        background-color: #EF4444; 
+        color: white;
+    }
+    QPushButton:pressed {
+        background-color: #DC2626;
+    }</string>
+    </property>
+    <property name="text">
+     <string>Удалить задачу</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="read_completed_task">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>450</y>
+      <width>171</width>
+      <height>111</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    background-color: #3B82F6;
+    border-radius: 15px;
+    color: white;
+    font-size: 13px;
+    font-weight: bold;
+    padding: 15px;
+}
+    QPushButton:hover {
+        background-color: #2563EB;
+    }
+    QPushButton:pressed {
+        background-color: #1D4ED8;
+    }</string>
+    </property>
+    <property name="text">
+     <string>Завершённые
+задачи</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="histoty_task">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>450</y>
+      <width>171</width>
+      <height>111</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    background-color: #3B82F6;
+    border-radius: 15px;
+    color: white;
+    font-size: 13px;
+    font-weight: bold;
+    padding: 15px;
+}
+    QPushButton:hover {
+        background-color: #2563EB;
+    }
+    QPushButton:pressed {
+        background-color: #1D4ED8;
+    }</string>
+    </property>
+    <property name="text">
+     <string>Архив задач</string>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

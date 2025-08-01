@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>581</width>
+    <height>671</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget {
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+        stop:0 #b5e1c3,
+        stop:1 #7fb5b5);
+}</string>
+  </property>
+  <widget class="QLineEdit" name="input_description">
+   <property name="geometry">
+    <rect>
+     <x>80</x>
+     <y>240</y>
+     <width>431</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLineEdit {
+    border: 2px solid #cccccc;         /* светло-серая рамка */
+    border-radius: 8px;                /* скруглённые углы */
+    padding: 8px 12px;                 /* внутренние отступы */
+    font-size: 14pt;                   /* размер шрифта */
+    background-color: #fefefe;         /* почти белый фон */
+    color: #333333;                    /* тёмно-серый текст */
+    transition: border-color 0.3s ease; /* плавное изменение рамки */
+}
+
+QLineEdit:focus {
+    border-color: #448aff;             /* ярко-синий цвет при фокусе */
+    background-color: #ffffff;         /* белый фон при фокусе */
+    outline: none;                     /* убираем стандартное выделение */
+}
+    QLineEdit::placeholder {
+        color: #999999;
+        font-style: italic;
+    }</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignmentFlag::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_description_task">
+   <property name="geometry">
+    <rect>
+     <x>120</x>
+     <y>110</y>
+     <width>311</width>
+     <height>111</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel {
+    background-color: transparent;    /* прозрачный фон */
+    color: #333333;                   /* тёмно-серый цвет текста */
+    font-size: 14pt;                  /* размер шрифта */
+    font-weight: 600;                 /* чуть жирнее */
+    padding: 4px 8px;                 /* отступы вокруг текста */
+    border-radius: 6px;               /* скруглённые углы */
+    border: 1px solid #cccccc;       /* тонкая светлая рамка */
+    /* можно добавить лёгкую тень для текста */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+</string>
+   </property>
+   <property name="text">
+    <string>Описание задачи</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignmentFlag::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_time_task">
+   <property name="geometry">
+    <rect>
+     <x>80</x>
+     <y>330</y>
+     <width>421</width>
+     <height>151</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel {
+    background-color: transparent;    /* прозрачный фон */
+    color: #333333;                   /* тёмно-серый цвет текста */
+    font-size: 14pt;                  /* размер шрифта */
+    font-weight: 600;                 /* чуть жирнее */
+    padding: 4px 8px;                 /* отступы вокруг текста */
+    border-radius: 6px;               /* скруглённые углы */
+    border: 1px solid #cccccc;       /* тонкая светлая рамка */
+    /* можно добавить лёгкую тень для текста */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+</string>
+   </property>
+   <property name="text">
+    <string>Введите время, например: 1m 1d 1h 1min 1s
+(1 месяц, 1 день, 1 час, 1 минута, 1 секунда)</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="add_task_label_des">
+   <property name="geometry">
+    <rect>
+     <x>-20</x>
+     <y>10</y>
+     <width>651</width>
+     <height>101</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel {
+    background-color: transparent;
+    color: #2E86C1;               /* насыщенный синий цвет */
+    font-size: 20pt;              /* крупный шрифт */
+    font-weight: bold;            /* жирный текст */
+    padding: 8px 15px;
+    border-bottom: 3px solid #2E86C1;  /* нижняя цветная линия — акцент */
+    margin-bottom: 10px;
+}
+</string>
+   </property>
+   <property name="text">
+    <string>Добавить задачу       </string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignmentFlag::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="add_task_button">
+   <property name="geometry">
+    <rect>
+     <x>170</x>
+     <y>580</y>
+     <width>231</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+    background-color: #448aff;          /* насыщенный синий фон */
+    color: white;                       /* белый текст */
+    border: none;                      /* без рамки */
+    border-radius: 10px;               /* скруглённые углы */
+    padding: 10px 20px;                /* внутренние отступы */
+    font-size: 14pt;                   /* размер шрифта */
+    font-weight: bold;                 /* жирный текст */
+    transition: background-color 0.3s ease;
+}
+
+QPushButton:hover {
+    background-color: #2979ff;          /* более яркий синий при наведении */
+}
+
+QPushButton:pressed {
+    background-color: #1c54b2;          /* тёмно-синий при нажатии */
+}
+</string>
+   </property>
+   <property name="text">
+    <string>Добавить задачу</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="input_time_task">
+   <property name="geometry">
+    <rect>
+     <x>80</x>
+     <y>490</y>
+     <width>431</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLineEdit {
+    border: 2px solid #cccccc;         /* светло-серая рамка */
+    border-radius: 8px;                /* скруглённые углы */
+    padding: 8px 12px;                 /* внутренние отступы */
+    font-size: 14pt;                   /* размер шрифта */
+    background-color: #fefefe;         /* почти белый фон */
+    color: #333333;                    /* тёмно-серый текст */
+    transition: border-color 0.3s ease; /* плавное изменение рамки */
+}
+
+QLineEdit:focus {
+    border-color: #448aff;             /* ярко-синий цвет при фокусе */
+    background-color: #ffffff;         /* белый фон при фокусе */
+    outline: none;                     /* убираем стандартное выделение */
+}
+    QLineEdit::placeholder {
+        color: #999999;
+        font-style: italic;
+    }</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignmentFlag::AlignCenter</set>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
