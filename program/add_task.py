@@ -8,33 +8,36 @@ def append_task():
             con = sqlite3.connect("TodoList.db")
             c = con.cursor()
             now = time.localtime()
-            time_end = time.localtime()
-            try:
+            while True:
                 temp_time_input = input(
-                "\n📆 Укажите срок задачи:\n"
-                "Например:\n"
-                "  - 3d         → 3 дня\n"
-                "  - 2h 30min   → 2 часа 30 минут\n"
-                "  - 1m 5d 2h   → 1 месяц, 5 дней и 2 часа\n"
-                "  - 0          → бесконечная задача ♾️\n\n"
-                "Введите срок: ").strip()
-                c.execute("INSERT INTO task (description, status, time, time_end, time_end_str) VALUES (?,?,?,?,? )", (add_task, 
-                                                                                                      "active", 
-                                                                                                      time_setlocal.format_time(now), 
-                                                                                                      temp_task.temp_time(temp_time_input), 
-                                                                                                      time_setlocal.format_time(time_end), ))
-                con.commit()
-                con.close()
-                print("Задача успешно добавлена! 🎉")
-                menu.back_menu()
-                break
-            except ValueError:
-                print("Напишите т")
+                    "\n📆 Укажите срок задачи:\n"
+                    "Например:\n"
+                    "  - 3d         → 3 дня\n"
+                    "  - 2h 30min   → 2 часа 30 минут\n"
+                    "  - 1m 5d 2h   → 1 месяц, 5 дней и 2 часа\n"
+                    "  - 0          → бесконечная задача ♾️\n\n"
+                    "Введите срок: ").strip()
+                end_timestamp = temp_task.temp_time(temp_time_input)
+                if temp_time_input:
+                    error = temp_task.temp_time(temp_time_input)
+                    if error is -1:
+                        print("❌ Неверный формат времени. Пример: '1d 3h 20min'")
+                    else:
+                        time_end_struct = time.localtime(end_timestamp)
+                        time_end_str = time_setlocal.format_time(time_end_struct)
+                        c.execute("INSERT INTO task (description, status, time, time_end, time_end_str) VALUES (?,?,?,?,? )", (add_task, 
+                                                                                                                "active", 
+                                                                                                                time_setlocal.format_time(now), 
+                                                                                                                temp_task.temp_time(temp_time_input), 
+                                                                                                                time_end_str), )
+                        con.commit()
+                        con.close()
+                        print("Задача успешно добавлена! 🎉")
+                        menu.back_menu()
+                        break
         else:
             print("Пустая задача не может быть добавлена. 🚫")
             continue
-    
-    menu.back_menu()
 def mark_completed():
     con = sqlite3.connect("ToDoList.db")
     c = con.cursor()

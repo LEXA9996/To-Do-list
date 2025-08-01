@@ -23,7 +23,7 @@ def read_task():
     else:
         print("\nСписок текущих задач 📋:")
         for index, item in enumerate(task):
-            if item[4] is None:
+            if item[4]  == None:
                 print(f"{index+1}. {item[1]} — добавлено: {item[3]} | срок: бесконечно")
             else:
                 print(f"{index+1}. {item[1]} — добавлено: {item[3]} | срок: {item[5]}")
