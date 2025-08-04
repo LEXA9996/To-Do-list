@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>610</width>
+    <width>611</width>
     <height>707</height>
    </rect>
   </property>
@@ -24,8 +24,8 @@
   <widget class="QListWidget" name="complected_task_wid">
    <property name="geometry">
     <rect>
-     <x>-50</x>
-     <y>110</y>
+     <x>0</x>
+     <y>100</y>
      <width>661</width>
      <height>581</height>
     </rect>

@@ -22,7 +22,7 @@ class Ui_Dialog(object):
     def setupUi(self, Dialog):
         if not Dialog.objectName():
             Dialog.setObjectName(u"Dialog")
-        Dialog.resize(610, 707)
+        Dialog.resize(611, 707)
         Dialog.setStyleSheet(u"QWidget {\n"
 "    background: qlineargradient(x1:0, y1:0, x2:0, y2:1,\n"
 "        stop:0 #b5e1c3,\n"
@@ -31,7 +31,7 @@ class Ui_Dialog(object):
 "")
         self.complected_task_wid = QListWidget(Dialog)
         self.complected_task_wid.setObjectName(u"complected_task_wid")
-        self.complected_task_wid.setGeometry(QRect(-50, 110, 661, 581))
+        self.complected_task_wid.setGeometry(QRect(0, 100, 661, 581))
         self.complected_task_wid.setStyleSheet(u"QListWidget {\n"
 "    background-color: transparent;       /* \u043f\u0440\u043e\u0437\u0440\u0430\u0447\u043d\u044b\u0439 \u0444\u043e\u043d */\n"
 "    border: 1.5px solid #cccccc;         /* \u0442\u043e\u043d\u043a\u0430\u044f \u0441\u0432\u0435\u0442\u043b\u0430\u044f \u0440\u0430\u043c\u043a\u0430 */\n"
