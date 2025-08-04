@@ -9,34 +9,17 @@ class ActiveComletedTaskWindow(QDialog):
         self.ui = Ui_Dialog()#Создаём UI
         self.ui.setupUi(self)#Привязываем UI к текущему окну
         self.read_task()# Загружаем данные
-    def show_completed(self):
-        con = sqlite3.connect("ToDoList.db")
-        c = con.cursor()
-        c.execute("SELECT * from task WHERE status = 'completed'")
-        task_completed = c.fetchall()
-        if not task_completed:
-            print("Пока нет задач, выполненных за последние 7 дней. 💤")
-        else:
-            print("\nСписок выполненных задач за 7 дней🎊:")
-            for index, value in enumerate(task_completed):
-                print(f"{index + 1}. {value[1]}\n   └ Выложено: {value[3]} | Выполнено: {value[5]}")
     def read_task(self):
+        self.ui.active_task_wid.clear()
         con = sqlite3.connect("ToDoList.db")
         c = con.cursor()
         c.execute("SELECT * from task WHERE status = 'active'")
         task = c.fetchall()
         con.commit()
         con.close()
-        self.ui.active_task_wid.clear()
         if not task:
-            msg = QMessageBox(self)
-            msg.setIcon(QMessageBox.Critical)
-            msg.setWindowTitle("Ошибка")
-            msg.setText("Что-то пошло не так 😢")
-            msg.setInformativeText("У вас нету активных задач.")
-            msg.setStandardButtons(QMessageBox.Ok)
-            msg.exec()
-            return
+            task_text = "У вас пока нет активных задач. Добавьте новую! 😊"
+            self.ui.active_task_wid.addItem(task_text)
         else:
             for index, item in enumerate(task):
                 deadline = "бесконечно" if item[4] is None else item[5]
