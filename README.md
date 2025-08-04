@@ -35,6 +35,6 @@
 1. Убедитесь, что у вас установлен Python 3  
 2. Склонируйте репозиторий:
    ```bash
-   git clone https://github.com/your_username/ToDoList.git
+   git clone https://github.com/LEXA9996/ToDoList.git
 
 
