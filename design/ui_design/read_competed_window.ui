@@ -33,7 +33,7 @@
 }
 </string>
   </property>
-  <widget class="QLabel" name="complected_task_wid">
+  <widget class="QLabel" name="label_text_complect_text">
    <property name="geometry">
     <rect>
      <x>-60</x>
@@ -66,7 +66,7 @@
     <set>Qt::AlignmentFlag::AlignCenter</set>
    </property>
   </widget>
-  <widget class="QListWidget" name="listWidget">
+  <widget class="QListWidget" name="complected_task_wid">
    <property name="geometry">
     <rect>
      <x>-10</x>
