@@ -158,55 +158,6 @@ QPushButton:pressed {
     <string>Отправить выполенную задачу</string>
    </property>
   </widget>
-  <widget class="QComboBox" name="combo_active_task_box_2">
-   <property name="geometry">
-    <rect>
-     <x>100</x>
-     <y>280</y>
-     <width>311</width>
-     <height>51</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">QComboBox {
-    background-color: #fefefe;      /* светлый фон поля */
-    color: #222222;                 /* тёмный текст в поле */
-    border: 2px solid #3B82F6;
-    border-radius: 12px;
-    padding: 6px 15px 6px 10px;
-    font-size: 14pt;
-    min-width: 150px;
-}
-
-QComboBox:hover {
-    border-color: #2563EB;
-}
-
-QComboBox:focus {
-    border-color: #1D4ED8;
-}
-
-QComboBox::drop-down {
-    subcontrol-origin: padding;
-    subcontrol-position: top right;
-    width: 25px;
-    border: none;
-    background: transparent;
-}
-
-/* Текст в выпадающем списке */
-QComboBox QAbstractItemView {
-    background-color: #fefefe;      /* светлый фон списка */
-    color: #222222;                 /* тёмный текст */
-    selection-background-color: #3B82F6; /* синий фон при выделении */
-    selection-color: white;         /* белый текст при выделении */
-    border: 1px solid #3B82F6;
-}
-
-/* Убери любые стили для down-arrow, чтобы стрелка была стандартной */
-</string>
-   </property>
-  </widget>
  </widget>
  <resources/>
  <connections/>

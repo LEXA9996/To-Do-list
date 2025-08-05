@@ -120,47 +120,6 @@ class Ui_Dialog(object):
 "    background-color: #1D4ED8;\n"
 "}\n"
 "")
-        self.combo_active_task_box_2 = QComboBox(Dialog)
-        self.combo_active_task_box_2.setObjectName(u"combo_active_task_box_2")
-        self.combo_active_task_box_2.setGeometry(QRect(100, 280, 311, 51))
-        self.combo_active_task_box_2.setStyleSheet(u"QComboBox {\n"
-"    background-color: #fefefe;      /* \u0441\u0432\u0435\u0442\u043b\u044b\u0439 \u0444\u043e\u043d \u043f\u043e\u043b\u044f */\n"
-"    color: #222222;                 /* \u0442\u0451\u043c\u043d\u044b\u0439 \u0442\u0435\u043a\u0441\u0442 \u0432 \u043f\u043e\u043b\u0435 */\n"
-"    border: 2px solid #3B82F6;\n"
-"    border-radius: 12px;\n"
-"    padding: 6px 15px 6px 10px;\n"
-"    font-size: 14pt;\n"
-"    min-width: 150px;\n"
-"}\n"
-"\n"
-"QComboBox:hover {\n"
-"    border-color: #2563EB;\n"
-"}\n"
-"\n"
-"QComboBox:focus {\n"
-"    border-color: #1D4ED8;\n"
-"}\n"
-"\n"
-"QComboBox::drop-down {\n"
-"    subcontrol-origin: padding;\n"
-"    subcontrol-position: top right;\n"
-"    width: 25px;\n"
-"    border: none;\n"
-"    background: transparent;\n"
-"}\n"
-"\n"
-"/* \u0422\u0435\u043a\u0441\u0442 \u0432 \u0432\u044b\u043f\u0430\u0434\u0430\u044e\u0449\u0435\u043c \u0441\u043f\u0438\u0441\u043a\u0435 */\n"
-"QComboBox QAbstractItemView {\n"
-"    background-color: #fefefe;      /* \u0441\u0432\u0435\u0442\u043b\u044b"
-                        "\u0439 \u0444\u043e\u043d \u0441\u043f\u0438\u0441\u043a\u0430 */\n"
-"    color: #222222;                 /* \u0442\u0451\u043c\u043d\u044b\u0439 \u0442\u0435\u043a\u0441\u0442 */\n"
-"    selection-background-color: #3B82F6; /* \u0441\u0438\u043d\u0438\u0439 \u0444\u043e\u043d \u043f\u0440\u0438 \u0432\u044b\u0434\u0435\u043b\u0435\u043d\u0438\u0438 */\n"
-"    selection-color: white;         /* \u0431\u0435\u043b\u044b\u0439 \u0442\u0435\u043a\u0441\u0442 \u043f\u0440\u0438 \u0432\u044b\u0434\u0435\u043b\u0435\u043d\u0438\u0438 */\n"
-"    border: 1px solid #3B82F6;\n"
-"}\n"
-"\n"
-"/* \u0423\u0431\u0435\u0440\u0438 \u043b\u044e\u0431\u044b\u0435 \u0441\u0442\u0438\u043b\u0438 \u0434\u043b\u044f down-arrow, \u0447\u0442\u043e\u0431\u044b \u0441\u0442\u0440\u0435\u043b\u043a\u0430 \u0431\u044b\u043b\u0430 \u0441\u0442\u0430\u043d\u0434\u0430\u0440\u0442\u043d\u043e\u0439 */\n"
-"")
 
         self.retranslateUi(Dialog)
 
