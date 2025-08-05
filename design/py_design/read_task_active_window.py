@@ -22,7 +22,9 @@ class Ui_Dialog(object):
     def setupUi(self, Dialog):
         if not Dialog.objectName():
             Dialog.setObjectName(u"Dialog")
-        Dialog.resize(604, 711)
+        Dialog.resize(857, 764)
+        Dialog.setMinimumSize(QSize(857, 764))
+        Dialog.setMaximumSize(QSize(857, 764))
         Dialog.setStyleSheet(u"QWidget {\n"
 "    background: qlineargradient(x1:0, y1:0, x2:0, y2:1,\n"
 "        stop:0 #b5e1c3,\n"
@@ -30,7 +32,7 @@ class Ui_Dialog(object):
 "}")
         self.active_task_wid = QListWidget(Dialog)
         self.active_task_wid.setObjectName(u"active_task_wid")
-        self.active_task_wid.setGeometry(QRect(0, 110, 601, 601))
+        self.active_task_wid.setGeometry(QRect(0, 110, 861, 651))
         self.active_task_wid.setStyleSheet(u"QListWidget {\n"
 "    background-color: transparent;       /* \u043f\u0440\u043e\u0437\u0440\u0430\u0447\u043d\u044b\u0439 \u0444\u043e\u043d */\n"
 "    border: 1.5px solid #cccccc;         /* \u0442\u043e\u043d\u043a\u0430\u044f \u0441\u0432\u0435\u0442\u043b\u0430\u044f \u0440\u0430\u043c\u043a\u0430 */\n"
@@ -44,7 +46,7 @@ class Ui_Dialog(object):
 "")
         self.active_task_label = QLabel(Dialog)
         self.active_task_label.setObjectName(u"active_task_label")
-        self.active_task_label.setGeometry(QRect(-60, 20, 711, 91))
+        self.active_task_label.setGeometry(QRect(-60, 20, 951, 91))
         self.active_task_label.setStyleSheet(u"QLabel {\n"
 "    background-color: transparent;\n"
 "    color: #2E86C1;               /* \u043d\u0430\u0441\u044b\u0449\u0435\u043d\u043d\u044b\u0439 \u0441\u0438\u043d\u0438\u0439 \u0446\u0432\u0435\u0442 */\n"

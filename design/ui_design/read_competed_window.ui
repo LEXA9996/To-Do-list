@@ -6,9 +6,21 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>611</width>
-    <height>707</height>
+    <width>857</width>
+    <height>764</height>
    </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>857</width>
+    <height>764</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>857</width>
+    <height>764</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
@@ -21,37 +33,20 @@
 }
 </string>
   </property>
-  <widget class="QListWidget" name="complected_task_wid">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>100</y>
-     <width>661</width>
-     <height>581</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">QListWidget {
-    background-color: transparent;       /* прозрачный фон */
-    border: 1.5px solid #cccccc;         /* тонкая светлая рамка */
-    border-radius: 10px;                  /* скруглённые углы */
-    padding: 5px;
-    font-size: 13pt;
-    color: #333333;
-    selection-background-color: #448aff; /* синий фон выделения */
-    selection-color: white;               /* белый текст выделения */
-}
-</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="active_task_label">
+  <widget class="QLabel" name="complected_task_wid">
    <property name="geometry">
     <rect>
      <x>-60</x>
      <y>10</y>
-     <width>711</width>
+     <width>941</width>
      <height>91</height>
     </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>941</width>
+     <height>0</height>
+    </size>
    </property>
    <property name="styleSheet">
     <string notr="true">QLabel {
@@ -69,6 +64,28 @@
    </property>
    <property name="alignment">
     <set>Qt::AlignmentFlag::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QListWidget" name="listWidget">
+   <property name="geometry">
+    <rect>
+     <x>-10</x>
+     <y>100</y>
+     <width>861</width>
+     <height>651</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QListWidget {
+    background-color: transparent;       /* прозрачный фон */
+    border: 1.5px solid #cccccc;         /* тонкая светлая рамка */
+    border-radius: 10px;                  /* скруглённые углы */
+    padding: 5px;
+    font-size: 13pt;
+    color: #333333;
+    selection-background-color: #448aff; /* синий фон выделения */
+    selection-color: white;               /* белый текст выделения */
+}</string>
    </property>
   </widget>
  </widget>

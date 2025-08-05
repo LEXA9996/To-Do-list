@@ -22,31 +22,20 @@ class Ui_Dialog(object):
     def setupUi(self, Dialog):
         if not Dialog.objectName():
             Dialog.setObjectName(u"Dialog")
-        Dialog.resize(611, 707)
+        Dialog.resize(857, 764)
+        Dialog.setMinimumSize(QSize(857, 764))
+        Dialog.setMaximumSize(QSize(857, 764))
         Dialog.setStyleSheet(u"QWidget {\n"
 "    background: qlineargradient(x1:0, y1:0, x2:0, y2:1,\n"
 "        stop:0 #b5e1c3,\n"
 "        stop:1 #7fb5b5);\n"
 "}\n"
 "")
-        self.complected_task_wid = QListWidget(Dialog)
+        self.complected_task_wid = QLabel(Dialog)
         self.complected_task_wid.setObjectName(u"complected_task_wid")
-        self.complected_task_wid.setGeometry(QRect(0, 100, 661, 581))
-        self.complected_task_wid.setStyleSheet(u"QListWidget {\n"
-"    background-color: transparent;       /* \u043f\u0440\u043e\u0437\u0440\u0430\u0447\u043d\u044b\u0439 \u0444\u043e\u043d */\n"
-"    border: 1.5px solid #cccccc;         /* \u0442\u043e\u043d\u043a\u0430\u044f \u0441\u0432\u0435\u0442\u043b\u0430\u044f \u0440\u0430\u043c\u043a\u0430 */\n"
-"    border-radius: 10px;                  /* \u0441\u043a\u0440\u0443\u0433\u043b\u0451\u043d\u043d\u044b\u0435 \u0443\u0433\u043b\u044b */\n"
-"    padding: 5px;\n"
-"    font-size: 13pt;\n"
-"    color: #333333;\n"
-"    selection-background-color: #448aff; /* \u0441\u0438\u043d\u0438\u0439 \u0444\u043e\u043d \u0432\u044b\u0434\u0435\u043b\u0435\u043d\u0438\u044f */\n"
-"    selection-color: white;               /* \u0431\u0435\u043b\u044b\u0439 \u0442\u0435\u043a\u0441\u0442 \u0432\u044b\u0434\u0435\u043b\u0435\u043d\u0438\u044f */\n"
-"}\n"
-"")
-        self.active_task_label = QLabel(Dialog)
-        self.active_task_label.setObjectName(u"active_task_label")
-        self.active_task_label.setGeometry(QRect(-60, 10, 711, 91))
-        self.active_task_label.setStyleSheet(u"QLabel {\n"
+        self.complected_task_wid.setGeometry(QRect(-60, 10, 941, 91))
+        self.complected_task_wid.setMinimumSize(QSize(941, 0))
+        self.complected_task_wid.setStyleSheet(u"QLabel {\n"
 "    background-color: transparent;\n"
 "    color: #2E86C1;               /* \u043d\u0430\u0441\u044b\u0449\u0435\u043d\u043d\u044b\u0439 \u0441\u0438\u043d\u0438\u0439 \u0446\u0432\u0435\u0442 */\n"
 "    font-size: 18pt;              /* \u043a\u0440\u0443\u043f\u043d\u044b\u0439 \u0448\u0440\u0438\u0444\u0442 */\n"
@@ -55,7 +44,20 @@ class Ui_Dialog(object):
 "    border-bottom: 3px solid #2E86C1;  /* \u0430\u043a\u0446\u0435\u043d\u0442\u043d\u0430\u044f \u043b\u0438\u043d\u0438\u044f \u0441\u043d\u0438\u0437\u0443 */\n"
 "    margin-bottom: 10px;\n"
 "}")
-        self.active_task_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        self.complected_task_wid.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        self.listWidget = QListWidget(Dialog)
+        self.listWidget.setObjectName(u"listWidget")
+        self.listWidget.setGeometry(QRect(-10, 100, 861, 651))
+        self.listWidget.setStyleSheet(u"QListWidget {\n"
+"    background-color: transparent;       /* \u043f\u0440\u043e\u0437\u0440\u0430\u0447\u043d\u044b\u0439 \u0444\u043e\u043d */\n"
+"    border: 1.5px solid #cccccc;         /* \u0442\u043e\u043d\u043a\u0430\u044f \u0441\u0432\u0435\u0442\u043b\u0430\u044f \u0440\u0430\u043c\u043a\u0430 */\n"
+"    border-radius: 10px;                  /* \u0441\u043a\u0440\u0443\u0433\u043b\u0451\u043d\u043d\u044b\u0435 \u0443\u0433\u043b\u044b */\n"
+"    padding: 5px;\n"
+"    font-size: 13pt;\n"
+"    color: #333333;\n"
+"    selection-background-color: #448aff; /* \u0441\u0438\u043d\u0438\u0439 \u0444\u043e\u043d \u0432\u044b\u0434\u0435\u043b\u0435\u043d\u0438\u044f */\n"
+"    selection-color: white;               /* \u0431\u0435\u043b\u044b\u0439 \u0442\u0435\u043a\u0441\u0442 \u0432\u044b\u0434\u0435\u043b\u0435\u043d\u0438\u044f */\n"
+"}")
 
         self.retranslateUi(Dialog)
 
@@ -64,6 +66,6 @@ class Ui_Dialog(object):
 
     def retranslateUi(self, Dialog):
         Dialog.setWindowTitle(QCoreApplication.translate("Dialog", u"Dialog", None))
-        self.active_task_label.setText(QCoreApplication.translate("Dialog", u"\u0421\u043f\u0438\u0441\u043e\u043a \u0437\u0430\u0432\u0435\u0440\u0448\u0451\u043d\u043d\u044b\u0445 \u0437\u0430\u0434\u0430\u0447 \u0437\u0430 \u043f\u043e\u0441\u043b\u0435\u0434\u043d\u0438\u0435 7 \u0434\u043d\u0435\u0439", None))
+        self.complected_task_wid.setText(QCoreApplication.translate("Dialog", u"\u0421\u043f\u0438\u0441\u043e\u043a \u0437\u0430\u0432\u0435\u0440\u0448\u0451\u043d\u043d\u044b\u0445 \u0437\u0430\u0434\u0430\u0447 \u0437\u0430 \u043f\u043e\u0441\u043b\u0435\u0434\u043d\u0438\u0435 7 \u0434\u043d\u0435\u0439", None))
     # retranslateUi
 
