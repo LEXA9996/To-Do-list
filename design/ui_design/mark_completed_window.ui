@@ -6,9 +6,21 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>510</width>
-    <height>579</height>
+    <width>494</width>
+    <height>555</height>
    </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>494</width>
+    <height>555</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>494</width>
+    <height>555</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
@@ -72,11 +84,23 @@ QComboBox QAbstractItemView {
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>-30</x>
+     <x>-50</x>
      <y>10</y>
      <width>601</width>
      <height>121</height>
     </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>601</width>
+     <height>121</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>601</width>
+     <height>121</height>
+    </size>
    </property>
    <property name="styleSheet">
     <string notr="true">QLabel {

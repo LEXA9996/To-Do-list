@@ -22,7 +22,9 @@ class Ui_Dialog(object):
     def setupUi(self, Dialog):
         if not Dialog.objectName():
             Dialog.setObjectName(u"Dialog")
-        Dialog.resize(510, 579)
+        Dialog.resize(494, 555)
+        Dialog.setMinimumSize(QSize(494, 555))
+        Dialog.setMaximumSize(QSize(494, 555))
         Dialog.setStyleSheet(u"QWidget {\n"
 "    background: qlineargradient(x1:0, y1:0, x2:0, y2:1,\n"
 "        stop:0 #b5e1c3,\n"
@@ -71,7 +73,9 @@ class Ui_Dialog(object):
 "")
         self.label = QLabel(Dialog)
         self.label.setObjectName(u"label")
-        self.label.setGeometry(QRect(-30, 10, 601, 121))
+        self.label.setGeometry(QRect(-50, 10, 601, 121))
+        self.label.setMinimumSize(QSize(601, 121))
+        self.label.setMaximumSize(QSize(601, 121))
         self.label.setStyleSheet(u"QLabel {\n"
 "    background-color: transparent;\n"
 "    color: #2E86C1;               /* \u043d\u0430\u0441\u044b\u0449\u0435\u043d\u043d\u044b\u0439 \u0441\u0438\u043d\u0438\u0439 \u0446\u0432\u0435\u0442 */\n"
