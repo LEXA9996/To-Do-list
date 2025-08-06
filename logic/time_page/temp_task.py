@@ -2,7 +2,7 @@ import re, time
 
 def temp_time(time_str: str) -> int:
     total_seconds = 0
-    if time_str == "0":
+    if not time_str:
         return None
     pattern = r'(\d+)\s*(d|h|min|s)'
     matches = re.findall(pattern, time_str)

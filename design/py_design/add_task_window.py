@@ -79,7 +79,7 @@ class Ui_Dialog(object):
         self.label_description_task.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.label_time_task = QLabel(Dialog)
         self.label_time_task.setObjectName(u"label_time_task")
-        self.label_time_task.setGeometry(QRect(80, 330, 421, 151))
+        self.label_time_task.setGeometry(QRect(20, 320, 541, 151))
         self.label_time_task.setStyleSheet(u"QLabel {\n"
 "    background-color: transparent;    /* \u043f\u0440\u043e\u0437\u0440\u0430\u0447\u043d\u044b\u0439 \u0444\u043e\u043d */\n"
 "    color: #333333;                   /* \u0442\u0451\u043c\u043d\u043e-\u0441\u0435\u0440\u044b\u0439 \u0446\u0432\u0435\u0442 \u0442\u0435\u043a\u0441\u0442\u0430 */\n"
@@ -165,7 +165,8 @@ class Ui_Dialog(object):
         self.input_description.setText("")
         self.label_description_task.setText(QCoreApplication.translate("Dialog", u"\u041e\u043f\u0438\u0441\u0430\u043d\u0438\u0435 \u0437\u0430\u0434\u0430\u0447\u0438", None))
         self.label_time_task.setText(QCoreApplication.translate("Dialog", u"\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u0432\u0440\u0435\u043c\u044f, \u043d\u0430\u043f\u0440\u0438\u043c\u0435\u0440: 1m 1d 1h 1min 1s\n"
-"(1 \u043c\u0435\u0441\u044f\u0446, 1 \u0434\u0435\u043d\u044c, 1 \u0447\u0430\u0441, 1 \u043c\u0438\u043d\u0443\u0442\u0430, 1 \u0441\u0435\u043a\u0443\u043d\u0434\u0430)", None))
+"(1 \u043c\u0435\u0441\u044f\u0446, 1 \u0434\u0435\u043d\u044c, 1 \u0447\u0430\u0441, 1 \u043c\u0438\u043d\u0443\u0442\u0430, 1 \u0441\u0435\u043a\u0443\u043d\u0434\u0430)\n"
+"\u041e\u0441\u0442\u0430\u0432\u044c\u0442\u0435 \u043f\u043e\u043b\u0435 \u043f\u0443\u0441\u0442\u044b\u043c, \u0447\u0442\u043e\u0431\u044b \u0441\u0434\u0435\u043b\u0430\u0442\u044c \u0437\u0430\u0434\u0430\u0447\u0443 \u0431\u0435\u0441\u0441\u0440\u043e\u0447\u043d\u043e\u0439", None))
         self.add_task_label_des.setText(QCoreApplication.translate("Dialog", u"\u0414\u043e\u0431\u0430\u0432\u0438\u0442\u044c \u0437\u0430\u0434\u0430\u0447\u0443       ", None))
         self.add_task_button.setText(QCoreApplication.translate("Dialog", u"\u0414\u043e\u0431\u0430\u0432\u0438\u0442\u044c \u0437\u0430\u0434\u0430\u0447\u0443", None))
         self.input_time_task.setText("")

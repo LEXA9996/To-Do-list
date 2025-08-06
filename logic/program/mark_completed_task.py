@@ -39,7 +39,7 @@ class MarkCompletedTask(QDialog):
 
         msg = QMessageBox(self)
         msg.setIcon(QMessageBox.Information)
-        msg.setText(f"Задача '{complet_text}' успешно отмечена как выполненная! 🎉")
+        msg.setText(f"Задача «{complet_text}» успешно отмечена как выполненная. 🎉")
         msg.setWindowTitle("Успех")
         msg.exec()
 

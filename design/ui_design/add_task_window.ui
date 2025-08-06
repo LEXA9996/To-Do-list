@@ -114,9 +114,9 @@ QLineEdit:focus {
   <widget class="QLabel" name="label_time_task">
    <property name="geometry">
     <rect>
-     <x>80</x>
-     <y>330</y>
-     <width>421</width>
+     <x>20</x>
+     <y>320</y>
+     <width>541</width>
      <height>151</height>
     </rect>
    </property>
@@ -136,7 +136,8 @@ QLineEdit:focus {
    </property>
    <property name="text">
     <string>Введите время, например: 1m 1d 1h 1min 1s
-(1 месяц, 1 день, 1 час, 1 минута, 1 секунда)</string>
+(1 месяц, 1 день, 1 час, 1 минута, 1 секунда)
+Оставьте поле пустым, чтобы сделать задачу бессрочной</string>
    </property>
   </widget>
   <widget class="QLabel" name="add_task_label_des">

@@ -3,10 +3,8 @@ from logic.time_page import temp_task, time_setlocal
 from PySide6.QtWidgets import QDialog, QListWidget, QVBoxLayout
 from PySide6.QtWidgets import QMessageBox
 from design.py_design.delete_task_window import Ui_Dialog as Ui_DeleteDialog
-import sqlite3
 from PySide6.QtCore import Qt
 from PySide6.QtGui import QCursor
-import sqlite3
 class DeleteTask(QDialog):
     def __init__(self):
         super().__init__()
@@ -33,7 +31,7 @@ class DeleteTask(QDialog):
         con.close()
         msg = QMessageBox(self)
         msg.setIcon(QMessageBox.Information)
-        msg.setText(f"Задача '{task_text}' успешно удалена! 🗑️")
+        msg.setText(f"Задача «{task_text}» была успешно удалена. 🗑️")
         msg.setWindowTitle("Успех")
         msg.exec()
     def load_tasks(self):

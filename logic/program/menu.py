@@ -6,6 +6,7 @@ from .read_completed_task import ComletedTask
 from .add_task import AddTaskWindow
 from .mark_completed_task import MarkCompletedTask
 from .delete_task import DeleteTask
+from .edit_task import EditTask
 class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
@@ -17,6 +18,7 @@ class MainWindow(QMainWindow):
         self.ui.add_task.clicked.connect(self.add_task)
         self.ui.completed_task.clicked.connect(self.completed_task)
         self.ui.delete_task.clicked.connect(self.delete_task)
+        self.ui.edit_task.clicked.connect(self.edit_task)
 
     def read_active_task(self):
         window = ActiveComletedTaskWindow()
@@ -32,4 +34,7 @@ class MainWindow(QMainWindow):
         window.exec()
     def delete_task(self):
         window = DeleteTask()
+        window.exec()
+    def edit_task(self):
+        window = EditTask()
         window.exec()

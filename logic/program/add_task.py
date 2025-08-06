@@ -18,35 +18,50 @@ class AddTaskWindow(QDialog):
                 now = time.localtime()
                 temp_time_input = self.ui.input_time_task.text().strip()
                 end_timestamp = temp_task.temp_time(temp_time_input)
-                if temp_time_input:
-                    error = temp_task.temp_time(temp_time_input)
-                    if error is -1:
+                if not temp_time_input:
+                    c.execute("INSERT INTO task (description, status, time, time_end, time_end_str) VALUES (?,?,?,?,? )", (add_task, 
+                                                                                                            "active", 
+                                                                                                            time_setlocal.format_time(now), 
+                                                                                                            temp_task.temp_time(temp_time_input), 
+                                                                                                            "Бесконечно"), )
+                    time_end_str = c.execute("SELECT time_end_str FROM task WHERE description = ?", (add_task, )).fetchone()
+                    con.commit()
+                    con.close()
+                    msg = QMessageBox(self)
+                    msg.setIcon(QMessageBox.Information)
+                    msg.setText(    f"✅ Задача «{add_task}» успешно добавлена! 🎉\n"
+                                    f"📅 Срок выполнения: {time_end_str[0]}")
+                    msg.setWindowTitle("Успех")
+                    msg.exec()
+                    return
+                elif end_timestamp is -1:
                         msg = QMessageBox(self)
                         msg.setIcon(QMessageBox.Warning)
-                        msg.setText("Неверный формат времени. Пример: '1d 3h 20min'")
+                        msg.setText("❌ Неверный формат времени. Пример: '1d 3h 20min'")
                         msg.setWindowTitle("Ошибка")
                         msg.exec()
-                        return
-                    else:
-                        time_end_struct = time.localtime(end_timestamp)
-                        time_end_str = time_setlocal.format_time(time_end_struct)
-                        c.execute("INSERT INTO task (description, status, time, time_end, time_end_str) VALUES (?,?,?,?,? )", (add_task, 
-                                                                                                                "active", 
-                                                                                                                time_setlocal.format_time(now), 
-                                                                                                                temp_task.temp_time(temp_time_input), 
-                                                                                                                time_end_str), )
-                        con.commit()
-                        con.close()
-                        msg = QMessageBox(self)
-                        msg.setIcon(QMessageBox.Information)
-                        msg.setText(f"Задача '{add_task}' успешно добавлена! 🎉")
-                        msg.setWindowTitle("Успех")
-                        msg.exec()
-                        return
+                        return               
+                else:
+                    time_end_struct = time.localtime(end_timestamp)
+                    time_end_str = time_setlocal.format_time(time_end_struct)
+                    c.execute("INSERT INTO task (description, status, time, time_end, time_end_str) VALUES (?,?,?,?,? )", (add_task, 
+                                                                                                            "active", 
+                                                                                                            time_setlocal.format_time(now), 
+                                                                                                            temp_task.temp_time(temp_time_input), 
+                                                                                                            time_end_str), )
+                    con.commit()
+                    con.close()
+                    msg = QMessageBox(self)
+                    msg.setIcon(QMessageBox.Information)
+                    msg.setText(    f"✅ Задача «{add_task}» успешно добавлена! 🎉\n"
+                                    f"📅 Срок выполнения: {time_end_str}")
+                    msg.setWindowTitle("Успех")
+                    msg.exec()
+                    return
             else:
                 msg = QMessageBox(self)
                 msg.setIcon(QMessageBox.Warning)
-                msg.setText("Задача не может быть пустой")
+                msg.setText("Пожалуйста, введите описание задачи — оно не может быть пустым.")
                 msg.setWindowTitle("Ошибка")
                 msg.exec()
                 return
