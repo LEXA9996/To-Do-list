@@ -23,6 +23,16 @@ class EditTask(QDialog):
         task_edit_time = self.ui.Input_time_edit_task.text().strip()
         end_timestamp = temp_task.temp_time(task_edit_time)
         time_end = c.execute("SELECT time_end_str FROM task WHERE id = ?", (task_id,)).fetchone()
+        if not task_edit_text.strip() and not task_edit_time:
+            msg = QMessageBox(self)
+            msg.setIcon(QMessageBox.Warning)
+            msg.setText("🤔 **Что меняем?**\n\n"  
+          + "▸ Текст задачи — введите новый\n"  
+          + "▸ Или время — укажите срок\n\n"  
+          + "❌ Без изменений — не получится!"); 
+            msg.setWindowTitle("Ошибка")
+            msg.exec()
+            return
         if task_edit_text.strip():
             if not task_edit_time:
                 c.execute("UPDATE task SET description = ?, time = ? WHERE id = ?",(task_edit_text, time_setlocal.format_time(now), task_id))
@@ -41,20 +51,20 @@ class EditTask(QDialog):
             elif end_timestamp is -1:
                 msg = QMessageBox(self)
                 msg.setIcon(QMessageBox.Warning)    
-                msg.setText("❌ Неверный формат времени. Пример: '1d 3h 20min'")
+                msg.setText("⏱️ Введите время в формате: «2d 5h 30min»"); 
                 msg.setWindowTitle("Ошибка")
                 msg.exec()
             else:
                 time_end_struct = time.localtime(end_timestamp)
                 time_end_str = time_setlocal.format_time(time_end_struct)
-                c.execute("UPDATE task SET description = ?, time = ?, time_end = ?, time_end_str = ? WHERE id = ?",(task_edit_text, time_setlocal.format_time(now), temp_task.temp_time(task_edit_time), time_end_str,  task_id))
+                c.execute("UPDATE task SET time = ?, time_end = ?, time_end_str = ? WHERE id = ?",(time_setlocal.format_time(now),  (task_edit_time), time_end_str,  task_id))
                 conn.commit()
                 conn.close()
                 msg = QMessageBox(self)
                 msg.setIcon(QMessageBox.Information)
                 msg.setText(
                     f"✅ Задача успешно обновлена! 🎉\n\n"
-                    f"📝 Было: «{task_text[0]}»\n"
+                    f"📝 Было: «{task_text}»\n"
                     f"✏️ Стало: «{task_edit_text}»\n"
                     f"📅 Новый срок: {time_end[0]}"
                 )
@@ -62,12 +72,28 @@ class EditTask(QDialog):
                 msg.exec()
                 return
         else:
-            msg = QMessageBox(self)
-            msg.setIcon(QMessageBox.Warning)
-            msg.setText("Пожалуйста, введите описание задачи — оно не может быть пустым.")
-            msg.setWindowTitle("Ошибка")
-            msg.exec()
-            return
+            if end_timestamp is -1:
+                msg = QMessageBox(self)
+                msg.setIcon(QMessageBox.Warning)    
+                msg.setText("⏱️ Введите время в формате: «2d 5h 30min»");  
+                msg.setWindowTitle("Ошибка")
+                msg.exec()
+            else:
+                time_end_struct = time.localtime(end_timestamp)
+                time_end_str = time_setlocal.format_time(time_end_struct)
+                c.execute("UPDATE task SET time = ?, time_end = ?, time_end_str = ? WHERE id = ?", (time_setlocal.format_time(now), temp_task.temp_time(task_edit_time), time_end_str, task_id))
+                conn.commit()
+                conn.close()
+                msg = QMessageBox(self)
+                msg.setIcon(QMessageBox.Information)    
+                msg.setText(
+                    f"✅ Задача успешно обновлена! 🎉\n\n"
+                    f"📝 Текст задачи остался без изменений: «{task_text[0]}»\n"
+                    f"📅 Новый срок: {time_end_str}"
+                )
+                msg.setWindowTitle("Успех")
+                msg.exec()
+                
     def load_tasks(self):
         self.ui.combo_active_task_edit_box.clear()
         con = sqlite3.connect("ToDoList.db")

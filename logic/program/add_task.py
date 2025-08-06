@@ -37,7 +37,7 @@ class AddTaskWindow(QDialog):
                 elif end_timestamp is -1:
                         msg = QMessageBox(self)
                         msg.setIcon(QMessageBox.Warning)
-                        msg.setText("❌ Неверный формат времени. Пример: '1d 3h 20min'")
+                        msg.setText("⏱️ Введите время в формате: «2d 5h 30min»"); 
                         msg.setWindowTitle("Ошибка")
                         msg.exec()
                         return               
