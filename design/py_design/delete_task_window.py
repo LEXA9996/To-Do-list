@@ -22,7 +22,9 @@ class Ui_Dialog(object):
     def setupUi(self, Dialog):
         if not Dialog.objectName():
             Dialog.setObjectName(u"Dialog")
-        Dialog.resize(447, 529)
+        Dialog.resize(500, 529)
+        Dialog.setMinimumSize(QSize(500, 529))
+        Dialog.setMaximumSize(QSize(500, 529))
         Dialog.setStyleSheet(u"QWidget {\n"
 "    background: qlineargradient(x1:0, y1:0, x2:0, y2:1,\n"
 "        stop:0 #b5e1c3,\n"
@@ -31,7 +33,7 @@ class Ui_Dialog(object):
 "")
         self.label = QLabel(Dialog)
         self.label.setObjectName(u"label")
-        self.label.setGeometry(QRect(-80, 0, 601, 121))
+        self.label.setGeometry(QRect(-50, 0, 601, 121))
         self.label.setStyleSheet(u"QLabel {\n"
 "    background-color: transparent;\n"
 "    color: #2E86C1;               /* \u043d\u0430\u0441\u044b\u0449\u0435\u043d\u043d\u044b\u0439 \u0441\u0438\u043d\u0438\u0439 \u0446\u0432\u0435\u0442 */\n"
@@ -60,7 +62,7 @@ class Ui_Dialog(object):
 "")
         self.combo_delete_task_box = QComboBox(Dialog)
         self.combo_delete_task_box.setObjectName(u"combo_delete_task_box")
-        self.combo_delete_task_box.setGeometry(QRect(40, 260, 351, 61))
+        self.combo_delete_task_box.setGeometry(QRect(20, 260, 471, 51))
         self.combo_delete_task_box.setStyleSheet(u"QComboBox {\n"
 "    background-color: #fefefe;      /* \u0441\u0432\u0435\u0442\u043b\u044b\u0439 \u0444\u043e\u043d \u043f\u043e\u043b\u044f */\n"
 "    color: #222222;                 /* \u0442\u0451\u043c\u043d\u044b\u0439 \u0442\u0435\u043a\u0441\u0442 \u0432 \u043f\u043e\u043b\u0435 */\n"
@@ -101,7 +103,7 @@ class Ui_Dialog(object):
 "")
         self.delete_button = QPushButton(Dialog)
         self.delete_button.setObjectName(u"delete_button")
-        self.delete_button.setGeometry(QRect(80, 350, 261, 101))
+        self.delete_button.setGeometry(QRect(120, 360, 261, 101))
         self.delete_button.setStyleSheet(u"QPushButton {\n"
 "    background-color: #3B82F6;\n"
 "    border-radius: 15px;\n"
