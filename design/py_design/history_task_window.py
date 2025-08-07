@@ -22,7 +22,9 @@ class Ui_Dialog(object):
     def setupUi(self, Dialog):
         if not Dialog.objectName():
             Dialog.setObjectName(u"Dialog")
-        Dialog.resize(471, 450)
+        Dialog.resize(473, 484)
+        Dialog.setMinimumSize(QSize(473, 484))
+        Dialog.setMaximumSize(QSize(473, 484))
         Dialog.setStyleSheet(u"QWidget {\n"
 "    background: qlineargradient(x1:0, y1:0, x2:0, y2:1,\n"
 "        stop:0 #b5e1c3,\n"
